@@ -2,4 +2,9 @@
 
 Navigate to the project directory
 
-run `nodemon server` and head over to `localhost:3000` in your browser to check it out.
+run 
+`npm install`
+
+`nodemon server` 
+
+head over to `localhost:3000` in your browser to check it out.
