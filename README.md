@@ -1,8 +1,10 @@
 #**Rendez**
 
-Navigate to the project directory
+
+`cd` into the peoject directory.
 
 run 
+
 `npm install`
 
 `nodemon server` 
