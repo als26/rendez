@@ -1,7 +1,7 @@
 #**Rendez**
 
 
-`cd` into the peoject directory.
+`cd` into the project directory.
 
 run 
 
