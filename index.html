@@ -8,6 +8,7 @@
       socket.on('connect', function () {
         socket.emit('room', room);
       });
+      
       socket.on('message', function (data) {
         console.log("The message is" + data);
       });

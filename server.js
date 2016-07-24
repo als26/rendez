@@ -5,16 +5,33 @@ var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-//var port = process.env.PORT || 3000;
+var usernames = {};
+var rooms = ['room1','room2','room3'];
 
+//var port = process.env.PORT || 3000;
+//socket.join(socket.room);
 
 //Root route aka homepage. ex localhost:3000
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/:id', function(req, res){
+  var id = req.params.id;
+  res.sendFile(__dirname + '/game.html')
+
+});
+
 io.on('connection', function(socket){
-  console.log('A user connected');
+
+  socket.on('room', function(room){
+    console.log("The room is " + room);
+    socket.join(room);
+  });
+  console.log('A user connected with socket id:'+ socket.id);
+  // These 2 lines don't seem to be working.
+  var room = "abc123";
+  io.in(room).emit('message', 'Hey everyone');
 
   socket.on('disconnect', function(){
 
@@ -22,6 +39,8 @@ io.on('connection', function(socket){
   });
 });
 
+
+
 http.listen(3000,function(){
-console.log('Magic happens on port 3000')
+console.log('Magic happens on port 3000');
 });
