@@ -5,8 +5,11 @@ var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-//var port = process.env.PORT || 3000;
+var usernames = {};
+var rooms = ['room1','room2','room3'];
 
+//var port = process.env.PORT || 3000;
+//socket.join(socket.room);
 
 //Root route aka homepage. ex localhost:3000
 app.get('/', function(req, res){
@@ -14,7 +17,7 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
-  console.log('A user connected');
+  console.log('A user connected with socket id:'+ socket.id);
 
   socket.on('disconnect', function(){
 
@@ -23,5 +26,5 @@ io.on('connection', function(socket){
 });
 
 http.listen(3000,function(){
-console.log('Magic happens on port 3000')
+console.log('Magic happens on port 3000');
 });
