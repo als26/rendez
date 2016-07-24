@@ -16,10 +16,16 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/:id', function(req, res){
+  var id = req.params.id;
+  res.sendFile(__dirname + '/game.html')
+
+});
+
 io.on('connection', function(socket){
 
   socket.on('room', function(room){
-    console.log("The room is" + room);
+    console.log("The room is " + room);
     socket.join(room);
   });
   console.log('A user connected with socket id:'+ socket.id);
