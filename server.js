@@ -17,13 +17,23 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', function(socket){
+
+  socket.on('room', function(room){
+    console.log("The room is" + room);
+    socket.join(room);
+  });
   console.log('A user connected with socket id:'+ socket.id);
+  // These 2 lines don't seem to be working.
+  var room = "abc123";
+  io.in(room).emit('message', 'Hey everyone');
 
   socket.on('disconnect', function(){
 
     console.log('A user disconnected');
   });
 });
+
+
 
 http.listen(3000,function(){
 console.log('Magic happens on port 3000');
