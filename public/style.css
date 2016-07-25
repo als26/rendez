@@ -1,4 +1,15 @@
 h1 {
-  color: red;
-  font-size: 100px;
+  color: navy;
+}
+
+.btn-default{
+  border-width: 2px;
+  border-color: grey;
+}
+
+.btn-default:hover{
+  background-color: transparent;
+  border-color: #33C3F0;
+
+
 }
