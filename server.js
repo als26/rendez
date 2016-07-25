@@ -12,13 +12,15 @@ var rooms = ['room1','room2','room3'];
 //socket.join(socket.room);
 
 //Root route aka homepage. ex localhost:3000
+
+app.use(express.static(__dirname + '/public'));
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.get('/:id', function(req, res){
   var id = req.params.id;
-  res.sendFile(__dirname + '/game.html')
+  res.sendFile(__dirname + '/public/game.html')
 
 });
 
