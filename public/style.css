@@ -10,6 +10,8 @@ h1 {
 .btn-default:hover{
   background-color: transparent;
   border-color: #33C3F0;
+}
 
-
+#user-name{
+  visibility: hidden;
 }
