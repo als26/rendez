@@ -8,7 +8,20 @@ jQuery( document ).ready(function() {
   $("#user-name-submit").bind('click', function() {
     userName = $("#user-name-input").val();
     console.log("user name: " +userName);
+    connectRoom();
   });
+
+  $("#join-button").bind('click',function() {
+      $("#join-room").css('visibility', 'visible');
+  });
+
+  $("#join-room-submit").bind('click', function() {
+    room = $("#join-room-input").val();
+    console.log("Room entered: " +room);
+    connectRoom(room);
+
+  });
+
 });
 
 //Generate random roomId
@@ -26,9 +39,23 @@ function generateRoomId() {
   return roomId;
 }
 
-function connectRoom() {
+// function connectRoom() {
+//   var socket = io();
+//   var room = generateRoomId();
+//   console.log("connectRoom was activated")
+//
+//   socket.on('connect', function () {
+//     socket.emit('room', room);
+//   });
+// }
+
+function connectRoom(room) {
   var socket = io();
-  var room = generateRoomId();
+
+  if (room == null){
+    room = generateRoomId();
+  }
+  console.log("connectRoom was activated. I will connect to this room: " + room)
 
   socket.on('connect', function () {
     socket.emit('room', room);

@@ -15,3 +15,7 @@ h1 {
 #user-name{
   visibility: hidden;
 }
+
+#join-room{
+  visibility: hidden;
+}

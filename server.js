@@ -8,6 +8,12 @@ var methodOverride = require('method-override');
 var usernames = {};
 var rooms = ['room1','room2','room3'];
 
+//Function to determine number of users in a room. No idea if its working correctly.
+// function usersInRoom(roomName) {
+//   var room = io.nsps['/'].adapter.rooms[roomName];
+//   return Object.keys(room).length;
+// }
+
 //var port = process.env.PORT || 3000;
 //socket.join(socket.room);
 
@@ -28,11 +34,12 @@ io.on('connection', function(socket){
   socket.on('room', function(room){
     console.log("The room is " + room);
     socket.join(room);
+
   });
   console.log('A user connected with socket id: '+ socket.id);
   // These 2 lines don't seem to be working.
-  var room = "abc123";
-  io.in(room).emit('message', 'Hey everyone');
+  // var room = "abc123";
+  // io.in(room).emit('message', 'Hey everyone');
 
   socket.on('disconnect', function(){
 
