@@ -21,7 +21,6 @@ app.get('/', function(req, res){
 app.get('/:id', function(req, res){
   var id = req.params.id;
   res.sendFile(__dirname + '/public/game.html')
-
 });
 
 io.on('connection', function(socket){
@@ -30,7 +29,7 @@ io.on('connection', function(socket){
     console.log("The room is " + room);
     socket.join(room);
   });
-  console.log('A user connected with socket id:'+ socket.id);
+  console.log('A user connected with socket id: '+ socket.id);
   // These 2 lines don't seem to be working.
   var room = "abc123";
   io.in(room).emit('message', 'Hey everyone');
