@@ -9,10 +9,10 @@ var usernames = {};
 var rooms = ['room1','room2','room3'];
 
 //Function to determine number of users in a room. No idea if its working correctly.
-// function usersInRoom(roomName) {
-//   var room = io.nsps['/'].adapter.rooms[roomName];
-//   return Object.keys(room).length;
-// }
+function usersInRoom(roomName) {
+  var room = io.nsps['/'].adapter.rooms[roomName];
+  console.log(Object.keys(room).length);
+}
 
 //var port = process.env.PORT || 3000;
 //socket.join(socket.room);
@@ -31,19 +31,31 @@ app.get('/:id', function(req, res){
 
 io.on('connection', function(socket){
 
+  var numClients = {};
+
   socket.on('room', function(room){
     console.log("The room is " + room);
     socket.join(room);
+    console.log('A user connected with socket id: '+ socket.id + ' in room: ' + room);
 
+    socket.room = room;
+    if (numClients[socket.room] == undefined){
+      console.log('First User added!');
+        numClients[socket.room] = 1;
+    }
+    else{
+      console.log('User added!');
+      numClients[socket.room]++;
+    }
+
+    console.log('The number of users in room ' +room+ ' is : ' +numClients[socket.room]);
   });
-  console.log('A user connected with socket id: '+ socket.id);
-  // These 2 lines don't seem to be working.
-  // var room = "abc123";
-  // io.in(room).emit('message', 'Hey everyone');
+
 
   socket.on('disconnect', function(){
-
+    numClients[socket.room]--;
     console.log('A user disconnected');
+    console.log('The number of users in the room is : ' +numClients[socket.room]);
   });
 });
 

@@ -49,15 +49,16 @@ function generateRoomId() {
 //   });
 // }
 
-function connectRoom(room) {
+function connectRoom(roomName) {
   var socket = io();
 
-  if (room == null){
-    room = generateRoomId();
+  if (roomName == null){
+    roomName = generateRoomId();
   }
-  console.log("connectRoom was activated. I will connect to this room: " + room)
+
 
   socket.on('connect', function () {
+    console.log("connectRoom was activated. I will connect to this room: " + room)
     socket.emit('room', room);
   });
 }
