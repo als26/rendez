@@ -58,7 +58,7 @@ function connectRoom(roomName) {
 
 
   socket.on('connect', function () {
-    console.log("connectRoom was activated. I will connect to this room: " + room)
-    socket.emit('room', room);
+    console.log("connectRoom was activated. I will connect to this room: " + roomName)
+    socket.emit('room', roomName);
   });
 }
