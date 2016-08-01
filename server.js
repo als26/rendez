@@ -29,9 +29,10 @@ app.get('/:id', function(req, res){
   res.sendFile(__dirname + '/public/game.html')
 });
 
+var numClients = {};
 io.on('connection', function(socket){
 
-  var numClients = {};
+  
 
   socket.on('room', function(room){
     console.log("The room is " + room);
