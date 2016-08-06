@@ -32,12 +32,13 @@ app.get('/:id', function(req, res){
 var numClients = {};
 io.on('connection', function(socket){
 
-  
+
 
   socket.on('room', function(room){
     console.log("The room is " + room);
     socket.join(room);
     console.log('A user connected with socket id: '+ socket.id + ' in room: ' + room);
+
 
     socket.room = room;
     if (numClients[socket.room] == undefined){

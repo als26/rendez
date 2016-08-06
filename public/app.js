@@ -24,6 +24,8 @@ jQuery( document ).ready(function() {
 
 });
 
+
+
 //Generate random roomId
 function generateRoomId() {
   var roomId = "";
@@ -50,15 +52,18 @@ function generateRoomId() {
 // }
 
 function connectRoom(roomName) {
-  var socket = io();
+
 
   if (roomName == null){
     roomName = generateRoomId();
   }
+  
+  var socket = io();
 
 
   socket.on('connect', function () {
     console.log("connectRoom was activated. I will connect to this room: " + roomName)
     socket.emit('room', roomName);
+    //window.location = roomName;
   });
 }
