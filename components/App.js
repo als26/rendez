@@ -1,5 +1,5 @@
 var React = require('react');
-import './App.css';
+
 
 var App = React.createClass({
   render() {
