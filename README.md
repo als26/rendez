@@ -27,7 +27,7 @@
 
   --Aditya Surabi
 
-  P.S ignore the stuff under this as the scripts are going to change.
+
 
 
 `cd` into the project directory.
