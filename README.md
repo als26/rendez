@@ -23,7 +23,7 @@
 
   I think that's it. There is probably going to be some more stuff that gets added on but we'll deal with it when we get to it.
 
-  Also probably need to set up some scripts to run the building and launching of the server so we don't have to manually type a bunch fo commands.
+  
 
   --Aditya Surabi
 
