@@ -58,6 +58,7 @@
 	  null,
 	  React.createElement(App, null),
 	  React.createElement(Joinroom, null),
+	  React.createElement(Createroom, null),
 	  React.createElement(App, null)
 	), document.getElementById('react-container'));
 
@@ -21511,9 +21512,24 @@
 
 /***/ },
 /* 177 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Createroom = React.createClass({
+	  displayName: "Createroom",
+	  render: function render() {
+	    return React.createElement(
+	      "button",
+	      { "class": "btn btn-default" },
+	      "Create"
+	    );
+	  }
+	});
+
+	module.exports = Createroom;
 
 /***/ }
 /******/ ]);

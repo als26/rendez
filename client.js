@@ -10,7 +10,7 @@ ReactDOM.render(
   <div>
     <App/>
     <Joinroom/>
-    <App/>
+    <Createroom/>
   </div>,
   document.getElementById('react-container')
 );
