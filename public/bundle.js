@@ -49,8 +49,17 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(35);
 	var App = __webpack_require__(175);
+	var Joinroom = __webpack_require__(176);
+	var Createroom = __webpack_require__(177);
 
-	ReactDOM.render(React.createElement(App, null), document.getElementById('react-container'));
+	//ReactDOM.render(<App/>, document.getElementById('react-container'));
+	ReactDOM.render(React.createElement(
+	  'div',
+	  null,
+	  React.createElement(App, null),
+	  React.createElement(Joinroom, null),
+	  React.createElement(App, null)
+	), document.getElementById('react-container'));
 
 /***/ },
 /* 1 */
@@ -21472,12 +21481,39 @@
 	    return React.createElement(
 	      'h1',
 	      null,
-	      'Hello World form React '
+	      'Hello World React component '
 	    );
 	  }
 	});
 
 	module.exports = App;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Joinroom = React.createClass({
+	  displayName: "Joinroom",
+	  render: function render() {
+	    return React.createElement(
+	      "button",
+	      { "class": "btn btn-default" },
+	      "Join"
+	    );
+	  }
+	});
+
+	module.exports = Joinroom;
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	"use strict";
 
 /***/ }
 /******/ ]);
