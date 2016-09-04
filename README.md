@@ -23,7 +23,7 @@
 
   I think that's it. There is probably going to be some more stuff that gets added on but we'll deal with it when we get to it.
 
-  
+
 
   --Aditya Surabi
 
@@ -37,6 +37,10 @@ run
 `npm install` if you don't already have the modules.
 
 `npm start` This will run `webpack` and start the server.
+
+#TODO
+
+  - Recreate the join room and create room buttons as React component
 
 
 
