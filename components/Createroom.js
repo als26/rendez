@@ -3,7 +3,7 @@ var React = require('react');
 var Createroom = React.createClass({
 
   render() {
-    return()
+    return(<button class="btn btn-default">Create</button>)
   }
 });
 
