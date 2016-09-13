@@ -38,10 +38,12 @@ run
 
 `npm start` This will run `webpack` and start the server.
 
+head over to `localhost:3000` in your browser to check it out.
+
 #TODO
 
   - Recreate the join room and create room buttons as React component
 
 
 
-head over to `localhost:3000` in your browser to check it out.
+
