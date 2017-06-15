@@ -1,6 +1,6 @@
-#**Rendez**
+**Rendez**
 
-##**Basic Breakdown of What's Inside**##
+**Basic Breakdown of What's Inside**
 
 - **Node.js** : The "engine" of the application. It's JavaScript on the server side and has an awesome package manager (npm). That's all I can say about it in a basic breakdown. You want something more in-depth go somewhere else.
 - **Express.js** : A web application framework built for Node.js. It has everything implied with a web application framework (render files, what to do when someone hits you with a HTTP verb etc.).
