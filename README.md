@@ -42,7 +42,7 @@ head over to `localhost:3000` in your browser to check it out.
 
 # TODO
 
-  - Recreate the join room and create room buttons as React component
+  - Recreate the join room and create room buttons as React component.
 
 
 
